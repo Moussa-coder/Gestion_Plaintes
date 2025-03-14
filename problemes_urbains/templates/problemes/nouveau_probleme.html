@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signaler un problème</title>
+  
+</head>
+<body>
+    <style>
+        body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="file"] {
+    width: calc(100% - 12px);
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+    </style>
+    <h1>Signaler un problème</h1>
+    <form action="{ % 'traitement_probleme %}" method="post" enctype="multipart/form-data">
+        <label for="nom">Votre nom :</label><br>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="email">Votre adresse e-mail :</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="description">Description du problème :</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="fichier">Joindre une capture d'écran (facultatif) :</label><br>
+        <input type="file" id="fichier" name="fichier"><br><br>
+
+        <input type="submit" value="Envoyer">
+        
+    </form>
+</body>
+</html>
